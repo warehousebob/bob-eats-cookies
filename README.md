@@ -1,3 +1,7 @@
+### Download
+Grab the latest release (with a ready-to-load ZIP) here:  
+👉 [Releases](https://github.com/warehousebob/bob-eats-cookies/releases/latest)
+
 # bob-eats-cookies
 
 Chrome extension to see, explain, and control site cookies.
