@@ -4,9 +4,10 @@ Grab the latest release (with a ready-to-load ZIP) here:
 
 # bob-eats-cookies
 
+**Uses Chrome’s on-device Gemini Nano via the Prompt API for local explanations.** <!-- updated: 2025-10-29 -->
 Chrome extension to see, explain, and control site cookies.
 
-## Bob Eats Cookies (v0.7.4)
+## Bob Eats Cookies (v0.7.5)
 
 See every cookie a site tries to use, get plain-English explanations, and toggle specific ones **On / Off**.
 
