@@ -1,0 +1,23 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Editor/project metadata
+.vscode/
+.idea/
+
+# Build/packaging artifacts
+dist/
+build/
+*.zip
+*.crx
+*.pem
+*.map
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Node (only matters if you later add tooling)
+node_modules/
