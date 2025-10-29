@@ -19,6 +19,12 @@ See every cookie a site tries to use, get plain-English explanations, and toggle
 
 **On** = cookie allowed · **Off** = cookie blocked and greyed out
 
+## Screenshots
+![Auto-Detect Tracking Cookies](assets/Bob%20Eats%20Cookies%20-%20Auto%20Detect%20Cookies.jpg)
+![See & Control Cookies](assets/Bob%20Eats%20Cookies%20-%20See%20and%20Control%20Cookies.jpg)
+![Turn Off With One Click](assets/Bob%20Eats%20Cookies%20-%20Single%20Click.jpg)
+![Easy Sign Out](assets/Bob%20Eats%20Cookies%20-%20Easy%20Sign%20Out.jpg)
+
 ## Install (Developer Mode)
 1. Open `chrome://extensions`
 2. Enable **Developer mode**
