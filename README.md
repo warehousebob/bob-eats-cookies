@@ -38,12 +38,44 @@ No data leaves your device. Explanations run locally when available.
 - `cookies`, `activeTab`, `scripting` — used to read, explain, and toggle cookies on the current page.
 - No analytics, no tracking.
 
-## Troubleshooting
-- **Popup list empty but badge shows a number:** refresh the tab; some sites set cookies after load.
-- **Logged out after turning cookies off:** session cookies were blocked. Turn those back **On**.
+---
 
-## Learn more
-[Project page](https://www.warehousebob.com/products/cookies)
+## Built-in AI: Gemini Nano (On-Device)
+This extension can use Chrome’s **Prompt API** to run **Gemini Nano locally** for plain-English cookie explanations (no network calls for inference). We detect readiness at runtime and only create a model session after a user gesture.
 
-## License
-MIT
+**How we detect & use Gemini Nano**
+```js
+// availability: 'available' | 'downloadable' | 'downloading' | 'unavailable'
+export async function isGeminiNanoReady(options = {}) {
+  const availability = await LanguageModel.availability(options);
+  return availability;
+}
+
+export async function getGeminiSession(options = {}) {
+  const availability = await isGeminiNanoReady(options);
+  if (availability === 'available') {
+    return await LanguageModel.create({
+      ...options,
+      monitor(m) {
+        m.addEventListener('downloadprogress', (e) => {
+          // For reviewer visibility during testing
+          console.log(`Gemini Nano download: ${Math.round(e.loaded * 100)}%`);
+        });
+      }
+    });
+  }
+  throw new Error(`Gemini Nano not ready: ${availability}`);
+}
+
+// Minimal smoke test (call after a user gesture)
+export async function nanoReadyTest() {
+  try {
+    const session = await getGeminiSession();
+    const out = await session.prompt("Reply with the word: READY");
+    console.log("[Gemini Nano] test response:", out);
+    return out;
+  } catch (e) {
+    console.warn(e.message);
+    return null;
+  }
+}
