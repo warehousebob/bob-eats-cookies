@@ -43,7 +43,7 @@ No data leaves your device. Explanations run locally when available.
 - **Logged out after turning cookies off:** session cookies were blocked. Turn those back **On**.
 
 ## Learn more
-[Project page](https://www.warehousebob.com/bob-eats-cookies)
+[Project page](https://www.warehousebob.com/products/cookies)
 
 ## License
 MIT
